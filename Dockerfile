@@ -1,33 +1,38 @@
-# Etapa de construcción
-FROM node:18-alpine AS builder
+# Etapa 1: Construcción (Build)
+# Usar node:22-alpine en lugar de slim para tener soporte nativo de compilación
+FROM node:22-alpine AS builder
+
+# Instalar dependencias del sistema necesarias para bindings nativos (tailwindcss/oxide)
+RUN apk add --no-cache python3 make g++ libc6-compat
 
 WORKDIR /app
 
 # Copiar archivos de dependencias
-COPY package*.json ./
+COPY package.json package-lock.json* ./
 
-# Instalar dependencias
-RUN npm install
+# Eliminar package-lock para forzar resolución correcta de bindings nativos en Linux (Opcional pero recomendado en tu Setup)
+RUN rm -f package-lock.json && npm install
 
-# Copiar el resto del código
+# Copiar el resto del código del proyecto
 COPY . .
 
-# Construir la aplicación para producción
+# Compilar la aplicación React para producción
 RUN npm run build
 
-# Etapa de producción
-FROM node:18-alpine
+# Etapa 2: Servidor (Nginx)
+FROM nginx:stable-alpine
 
-WORKDIR /app
+# Copiar la configuración personalizada de Nginx
+COPY default.conf /etc/nginx/conf.d/default.conf
 
-# Instalar 'serve' para servir los archivos estáticos
-RUN npm install -g serve
+# Limpiar los archivos por defecto de Nginx
+RUN rm -rf /usr/share/nginx/html/*
 
-# Copiar los archivos construidos desde la etapa anterior
-COPY --from=builder /app/dist ./dist
+# Copiar los assets compilados desde la etapa anterior
+COPY --from=builder /app/dist /usr/share/nginx/html
 
-# El puerto es inyectado por Cloud Run
-ENV PORT=8080
+# Indicar el puerto de Cloud Run
+EXPOSE 8080
 
-# Comando para iniciar la aplicación, escuchando en el puerto configurado
-CMD ["sh", "-c", "serve -s dist -l tcp://0.0.0.0:${PORT}"]
+# Iniciar Nginx
+CMD ["nginx", "-g", "daemon off;"]
