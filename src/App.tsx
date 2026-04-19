@@ -18,7 +18,7 @@ const games = [
     id: 'arkanoid',
     title: 'Arkanoid Neón',
     description: 'Destruye los bloques de neón con precisión.',
-    url: 'https://juegoarkanoid-1070505193439.us-central1.run.app',
+    url: 'https://juegoarkanoid-948774944187.europe-west1.run.app',
     color: '#00ffff',
     icon: CircleDashed,
     delay: '0.1s'
@@ -27,7 +27,7 @@ const games = [
     id: 'pacman',
     title: 'Pac-Man Neón',
     description: 'Come, huye de los fantasmas y domina el laberinto.',
-    url: 'https://juegopac-man-1070505193439.us-central1.run.app',
+    url: 'https://juegopac-man-948774944187.europe-west1.run.app',
     color: '#ffff00',
     icon: Ghost,
     delay: '0.2s'
@@ -36,7 +36,7 @@ const games = [
     id: 'pong',
     title: 'Pong Neón',
     description: 'El clásico tenis retro reinventado.',
-    url: 'https://juegopong-1070505193439.us-central1.run.app',
+    url: 'https://juegopong-956223175156.europe-west1.run.app',
     color: '#ff00ff',
     icon: Orbit,
     delay: '0.3s'
@@ -45,7 +45,7 @@ const games = [
     id: 'snake',
     title: 'Serpiente Neón',
     description: 'Crece sin límites y evita chocar contigo mismo.',
-    url: 'https://juegoserpiente-1070505193439.us-central1.run.app',
+    url: 'https://ritmo-ne-n-serpiente-727131753810.us-west1.run.app',
     color: '#00ff00',
     icon: MoveDiagonal,
     delay: '0.4s'
@@ -54,7 +54,7 @@ const games = [
     id: 'spaceinvaders',
     title: 'Space Invaders',
     description: 'Defiende la Tierra del asalto alienígena.',
-    url: 'https://juegospaceinvaders-1070505193439.us-central1.run.app',
+    url: 'https://juegospaceinvaders-948774944187.europe-west1.run.app',
     color: '#ff0055',
     icon: Rocket,
     delay: '0.5s'
@@ -63,7 +63,7 @@ const games = [
     id: 'tetris',
     title: 'Tetris Neón',
     description: 'Encaja las piezas al ritmo del synthwave.',
-    url: 'https://juegotetris-1070505193439.us-central1.run.app',
+    url: 'https://neon-tetris-pro-77199174767.us-west1.run.app',
     color: '#aa00ff',
     icon: Grid3X3,
     delay: '0.6s'
