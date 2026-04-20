@@ -50,13 +50,22 @@ const games = [
     delay: '0.4s'
   },
   {
+    id: 'asteroids',
+    title: 'Asteroids Neón',
+    description: 'Pilota, esquiva y destruye asteroides en modo arcade.',
+    url: 'https://asteroids-neon.run.app',
+    color: '#00d9ff',
+    icon: Rocket,
+    delay: '0.5s'
+  },
+  {
     id: 'spaceinvaders',
     title: 'Space Invaders',
     description: 'Defiende la Tierra del asalto alienígena.',
     url: 'https://juegospaceinvaders-948774944187.europe-west1.run.app',
     color: '#ff0055',
     icon: Rocket,
-    delay: '0.5s'
+    delay: '0.6s'
   },
   {
     id: 'tetris',
@@ -65,7 +74,7 @@ const games = [
     url: 'https://neon-tetris-pro-77199174767.us-west1.run.app',
     color: '#aa00ff',
     icon: Grid3X3,
-    delay: '0.6s'
+    delay: '0.7s'
   }
 ];
 
