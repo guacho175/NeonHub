@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
 
 :root {
-  --bg-dark: #050508; /* Aún más oscuro para resaltar neón */
+  --bg-dark: #050508;
   --bg-card: rgba(15, 15, 25, 0.6);
   --text-main: #f0f0f0;
   --neon-magenta: #ff00ff;
@@ -25,7 +25,6 @@ body {
   color: var(--text-main);
   min-height: 100vh;
   overflow-x: hidden;
-  /* Fondo animado estilo grid sintetizador */
   background-image: 
     linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
@@ -54,7 +53,6 @@ body::before {
   z-index: 1;
 }
 
-/* Efectos ambientales (Scanlines y Vignette) */
 .scanlines {
   position: fixed;
   top: 0;
@@ -131,10 +129,18 @@ body::before {
   text-transform: uppercase;
   letter-spacing: 4px;
   margin-top: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
 }
 
-/* Stats bar */
+.developed-by-header {
+  font-size: 1rem;
+  color: var(--neon-cyan);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
 .stats-bar {
   display: flex;
   gap: 15px;
@@ -175,6 +181,100 @@ body::before {
   50% { opacity: 0.4; }
 }
 
+/* CAROUSEL */
+.carousel-section {
+  width: 100%;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-container::before,
+.carousel-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.carousel-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-dark), transparent);
+}
+
+.carousel-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-dark), transparent);
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  gap: 2rem;
+  padding: 1rem 0;
+  animation: scroll-carousel 20s linear infinite;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-carousel {
+  0% { transform: translateX(0); }
+  /* La mitad del track porque está duplicado el array */
+  100% { transform: translateX(calc(-50% - 1rem)); } 
+}
+
+.carousel-card {
+  background: rgba(20, 20, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 2.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 280px;
+}
+
+.carousel-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--glow-color);
+  box-shadow: 0 5px 20px -5px var(--glow-color);
+}
+
+.carousel-icon {
+  filter: drop-shadow(0 0 5px var(--glow-color));
+}
+
+.carousel-card h4 {
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+/* TITLE COMMON */
+.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #fff;
+  margin: 2rem 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
 /* ANIMACIONES DE ENTRADA */
 .fade-in-up {
   opacity: 0;
@@ -190,15 +290,17 @@ body::before {
 }
 
 /* GRID DE JUEGOS */
+.games-grid-section {
+  width: 100%;
+}
+
 .games-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2.5rem;
-  padding: 3rem 5%;
+  padding: 1rem 5% 4rem;
   max-width: 1400px;
   margin: 0 auto;
-  flex: 1;
-  width: 100%;
 }
 
 .game-card {
@@ -318,7 +420,6 @@ body::before {
   overflow: hidden;
 }
 
-/* Borde brillante superior */
 .card-border-glow {
   position: absolute;
   top: 0;
@@ -359,16 +460,11 @@ body::before {
   display: inline-block;
   text-transform: uppercase;
 }
-.version {
-  font-size: 0.8rem;
-  color: #444;
-  margin-top: 5px;
-  letter-spacing: 3px;
-}
 
 @media (max-width: 768px) {
   .hub-header h1 { font-size: 3rem; }
   .logo-icon { width: 30px; height: 30px; }
   .games-grid { grid-template-columns: 1fr; padding: 2rem 1rem; }
   .game-card { padding: 2rem 1.5rem; }
+  .carousel-card { min-width: 250px; }
 }
