@@ -53,7 +53,7 @@ const games = [
     id: 'asteroids',
     title: 'Asteroids Neón',
     description: 'Pilota, esquiva y destruye asteroides en modo arcade.',
-    url: 'https://asteroids-neon.run.app',
+    url: 'https://juegoasteroidsneon-948774944187.europe-west1.run.app',
     color: '#00d9ff',
     icon: Rocket,
     delay: '0.5s'
