@@ -92,6 +92,8 @@ function App() {
       oscillator.stop(audioCtx.currentTime + 0.1);
     } catch(e) {
       // Ignorar si el navegador bloquea el autoplay de Web Audio API
+
+      
     }
   }, []);
 
