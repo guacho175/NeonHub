@@ -1,28 +1,30 @@
-# Neon Arcade (NeonHub)
+# Neon Arcade (Neon Hub) 🕹️
 
 Bienvenido al repositorio principal de **Neon Arcade (Neon Hub)**, el menú centralizado oficial desarrollado en **React**, **TypeScript** y **Vite**. Este proyecto es el núcleo que conecta y centraliza una colección de videojuegos clásicos estilo arcade reimaginados con temática de neón bajo una estética retrowave/synthwave unificada.
 
 🌐 **Plataforma Oficial:** [https://juegos.orbynexdigital.cl/](https://juegos.orbynexdigital.cl/)
 
-## 🚀 Tecnologías Utilizadas
+## 🚀 Arquitectura y Tecnologías
+
+El Hub funciona como una *Single Page Application* (SPA) optimizada, enfocada puramente en la presentación visual y la redirección eficiente hacia los distintos micro-frontends (juegos) de la plataforma.
 
 - **Frontend:** React 19, TypeScript
-- **Bundler & Tooling:** Vite
-- **Estilos:** CSS puro (diseño responsivo, animaciones dinámicas, variables CSS)
+- **Bundler & Tooling:** Vite (proporcionando HMR ultrarrápido y builds optimizados)
+- **Estilos:** CSS puro enfocado en rendimiento (diseño responsivo, animaciones dinámicas por hardware, variables CSS)
 - **Iconografía:** Lucide React
-- **Despliegue:** Vercel (Anteriormente alojado en Google Cloud Run)
+- **Infraestructura:** Despliegue nativo Serverless a través de Vercel.
 
-## 🎮 Catálogo de Juegos
+## 🎮 Catálogo Centralizado
 
-La plataforma integra los siguientes títulos desarrollados de forma independiente:
+La plataforma expone e integra los siguientes títulos desarrollados de forma independiente:
 
-1. **Arkanoid Neón:** Destruye los bloques de neón con precisión.
-2. **Pac-Man Neón:** Come, huye de los fantasmas y domina el laberinto.
-3. **Pong Neón:** El clásico tenis retro reinventado.
-4. **Serpiente Neón:** Crece sin límites y evita chocar contigo mismo.
-5. **Asteroids Neón:** Pilota, esquiva y destruye asteroides en modo arcade.
-6. **Space Invaders:** Defiende la Tierra del asalto alienígena.
-7. **Tetris Neón:** Encaja las piezas al ritmo del synthwave.
+1. **Arkanoid Neón**
+2. **Pac-Man Neón**
+3. **Pong Neón**
+4. **Serpiente Neón**
+5. **Asteroids Neón**
+6. **Space Invaders**
+7. **Tetris Neón**
 
 ## 🛠️ Instalación y Ejecución Local
 
@@ -30,7 +32,7 @@ Si deseas correr este proyecto en tu entorno de desarrollo local, sigue estos pa
 
 1. Clona el repositorio e ingresa al directorio:
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone https://github.com/guacho175/NeonHub.git
    cd NeonHub
    ```
 
@@ -45,10 +47,6 @@ Si deseas correr este proyecto en tu entorno de desarrollo local, sigue estos pa
    ```
 
 4. Abre tu navegador y dirígete a la dirección indicada por Vite (generalmente `http://localhost:5173`).
-
-## ☁️ Infraestructura y Despliegue
-
-Este proyecto fue migrado exitosamente de Google Cloud Run a **Vercel**. Al tratarse de una Single Page Application (SPA) basada en Vite, Vercel provee un entorno optimizado y nativo sin necesidad de configuraciones adicionales o contenedores. 
 
 ## 👨‍💻 Autor
 

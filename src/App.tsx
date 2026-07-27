@@ -35,7 +35,7 @@ const games = [
     id: 'pong',
     title: 'Pong Neón',
     description: 'El clásico tenis retro reinventado.',
-    url: 'https://pong-ne-n-956223175156.us-west1.run.app/',
+    url: 'https://pong.orbynexdigital.cl/',
     color: '#ff00ff',
     icon: Orbit,
     delay: '0.3s'
