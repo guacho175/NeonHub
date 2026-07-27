@@ -116,6 +116,15 @@ function App() {
       <div className="vignette"></div>
       <div className="particles-overlay"></div>
       
+      {/* Cabecera Principal */}
+      <nav className="top-nav">
+        <div className="nav-brand text-glow">ORBYNEX DIGITAL</div>
+        <div className="nav-links">
+          <a href="https://juegos.orbynexdigital.cl/" target="_blank" rel="noopener noreferrer">Juegos</a>
+          <a href="https://portafolio.orbynexdigital.cl/" target="_blank" rel="noopener noreferrer">Portafolio</a>
+        </div>
+      </nav>
+
       <header className="hub-header">
         <div className="logo-container">
           <MonitorPlay size={40} className="logo-icon text-glow" />
@@ -206,9 +215,9 @@ function App() {
 
       <footer className="hub-footer">
         <div className="footer-line"></div>
-        <div className="footer-links" style={{ display: 'flex', gap: '2rem', justifyContent: 'center', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
-          <a href="https://juegos.orbynexdigital.cl/" target="_blank" rel="noopener noreferrer" className="footer-link text-glow" style={{ color: 'var(--neon-cyan)', textDecoration: 'none', letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.9rem', fontWeight: 600 }}>Neon Hub</a>
-          <a href="https://portafolio.orbynexdigital.cl/" target="_blank" rel="noopener noreferrer" className="footer-link text-glow" style={{ color: 'var(--neon-magenta)', textDecoration: 'none', letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.9rem', fontWeight: 600 }}>Mi Portafolio</a>
+        <div className="footer-links">
+          <a href="https://juegos.orbynexdigital.cl/" target="_blank" rel="noopener noreferrer" className="footer-link cyan-glow">Orbynex Digital</a>
+          <a href="https://portafolio.orbynexdigital.cl/" target="_blank" rel="noopener noreferrer" className="footer-link magenta-glow">Portafolio</a>
         </div>
         <p className="glitch-text" data-text="Desarrollado por Galindez - 2026">Desarrollado por Galindez - 2026</p>
       </footer>

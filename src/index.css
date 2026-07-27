@@ -461,7 +461,114 @@ body::before {
   text-transform: uppercase;
 }
 
+/* TOP NAV CABECERA */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: rgba(5, 5, 8, 0.8);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 4px 30px rgba(0, 255, 255, 0.05);
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--neon-cyan);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.nav-links a:hover {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* FOOTER LINKS REDISEÑADO */
+.footer-links {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-link.cyan-glow {
+  color: var(--neon-cyan);
+}
+
+.footer-link.cyan-glow:hover {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+.footer-link.magenta-glow {
+  color: var(--neon-magenta);
+}
+
+.footer-link.magenta-glow:hover {
+  background: rgba(255, 0, 255, 0.1);
+  border-color: var(--neon-magenta);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+  transform: translateY(-3px);
+}
+
 @media (max-width: 768px) {
+  .top-nav {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
   .hub-header h1 { font-size: 3rem; }
   .logo-icon { width: 30px; height: 30px; }
   .games-grid { grid-template-columns: 1fr; padding: 2rem 1rem; }
