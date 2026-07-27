@@ -53,7 +53,7 @@ const games = [
     id: 'asteroids',
     title: 'Asteroids Neón',
     description: 'Pilota, esquiva y destruye asteroides en modo arcade.',
-    url: 'https://juegoasteroidsneon-948774944187.europe-west1.run.app',
+    url: 'https://asteroids.orbynexdigital.cl/',
     color: '#00d9ff',
     icon: Rocket,
     delay: '0.5s'
@@ -206,6 +206,10 @@ function App() {
 
       <footer className="hub-footer">
         <div className="footer-line"></div>
+        <div className="footer-links" style={{ display: 'flex', gap: '2rem', justifyContent: 'center', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
+          <a href="https://juegos.orbynexdigital.cl/" target="_blank" rel="noopener noreferrer" className="footer-link text-glow" style={{ color: 'var(--neon-cyan)', textDecoration: 'none', letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.9rem', fontWeight: 600 }}>Neon Hub</a>
+          <a href="https://portafolio.orbynexdigital.cl/" target="_blank" rel="noopener noreferrer" className="footer-link text-glow" style={{ color: 'var(--neon-magenta)', textDecoration: 'none', letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.9rem', fontWeight: 600 }}>Mi Portafolio</a>
+        </div>
         <p className="glitch-text" data-text="Desarrollado por Galindez - 2026">Desarrollado por Galindez - 2026</p>
       </footer>
     </div>

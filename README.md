@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# Neon Arcade (NeonHub)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenido al repositorio principal de **Neon Arcade (Neon Hub)**, el menú centralizado oficial desarrollado en **React**, **TypeScript** y **Vite**. Este proyecto es el núcleo que conecta y centraliza una colección de videojuegos clásicos estilo arcade reimaginados con temática de neón bajo una estética retrowave/synthwave unificada.
 
-Currently, two official plugins are available:
+🌐 **Plataforma Oficial:** [https://juegos.orbynexdigital.cl/](https://juegos.orbynexdigital.cl/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Tecnologías Utilizadas
 
-## React Compiler
+- **Frontend:** React 19, TypeScript
+- **Bundler & Tooling:** Vite
+- **Estilos:** CSS puro (diseño responsivo, animaciones dinámicas, variables CSS)
+- **Iconografía:** Lucide React
+- **Despliegue:** Vercel (Anteriormente alojado en Google Cloud Run)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎮 Catálogo de Juegos
 
-## Expanding the ESLint configuration
+La plataforma integra los siguientes títulos desarrollados de forma independiente:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Arkanoid Neón:** Destruye los bloques de neón con precisión.
+2. **Pac-Man Neón:** Come, huye de los fantasmas y domina el laberinto.
+3. **Pong Neón:** El clásico tenis retro reinventado.
+4. **Serpiente Neón:** Crece sin límites y evita chocar contigo mismo.
+5. **Asteroids Neón:** Pilota, esquiva y destruye asteroides en modo arcade.
+6. **Space Invaders:** Defiende la Tierra del asalto alienígena.
+7. **Tetris Neón:** Encaja las piezas al ritmo del synthwave.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Instalación y Ejecución Local
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Si deseas correr este proyecto en tu entorno de desarrollo local, sigue estos pasos:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Clona el repositorio e ingresa al directorio:
+   ```bash
+   git clone <URL_DEL_REPOSITORIO>
+   cd NeonHub
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Instala las dependencias necesarias:
+   ```bash
+   npm install
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. Inicia el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+4. Abre tu navegador y dirígete a la dirección indicada por Vite (generalmente `http://localhost:5173`).
+
+## ☁️ Infraestructura y Despliegue
+
+Este proyecto fue migrado exitosamente de Google Cloud Run a **Vercel**. Al tratarse de una Single Page Application (SPA) basada en Vite, Vercel provee un entorno optimizado y nativo sin necesidad de configuraciones adicionales o contenedores. 
+
+## 👨‍💻 Autor
+
+Desarrollado y mantenido por **Galindez** - 2026.
